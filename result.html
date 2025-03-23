@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Cost Prediction Result</title>
+</head>
+<body>
+    <h1>Course Cost Prediction Result</h1>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% else %}
+        <p><strong>Fees:</strong> ₹{{ fees }}</p>
+        <p><strong>Cost Category:</strong> {{ category }}</p>
+        
+        <h2>Visualizations</h2>
+        <h3>Line Plot</h3>
+        <img src="data:image/png;base64,{{ line_plot }}" alt="Line Plot">
+        
+        <h3>Bar Plot</h3>
+        <img src="data:image/png;base64,{{ bar_plot }}" alt="Bar Plot">
+        
+        <h3>Scatter Plot</h3>
+        <img src="data:image/png;base64,{{ scatter_plot }}" alt="Scatter Plot">
+        
+        <h3>PCA Visualization</h3>
+        <img src="data:image/png;base64,{{ pca_plot }}" alt="PCA Plot">
+    {% endif %}
+    <a href="/">Go Back</a>
+</body>
+</html>
